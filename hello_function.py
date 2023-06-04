@@ -4,4 +4,4 @@ def hello_fun(name):
     print(f"hello, there {name}\n"
           "how are you ")
     
-hello_fun("shamir")
+hello_fun("shamir")c

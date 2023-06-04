@@ -9,9 +9,6 @@ def main():
     if check_reboot():
         print("Prending Reboot..")
         sys.exit(1)
-    if desk_full():
-        print("Disk full..")
-        sys.exit(1)
     print("Everything okay..")
     sys.exit(0)
 
