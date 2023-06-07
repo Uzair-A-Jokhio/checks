@@ -3,6 +3,7 @@
 import shutil
 import os
 import sys
+import socket 
 
 def check_reboot():
     ''' Retrun True if a computer has a pending reboot '''
@@ -25,12 +26,20 @@ def check_root_full():
     '''Return True if the root partation is full. False otherwise'''
     return check_disk_full(disk="/", min_gb=2, min_percent=10)
 
- 
+def  check_no_network():
+    '''Return True if it fails to reslove GOOGLE URL, false otherwise '''
+    try:
+        socket.gethostbyname("www.google.com")
+        return False
+    except:
+        return True
+
 
 def main():
     checks=[
         (check_reboot, "Pending Reboot.."),
-        (check_root_full, "Root Partition Full.. ")
+        (check_root_full, "Root Partition Full.. "),
+        (check_no_network, "No working Network.."),
     ]
     everything_check=True
 
