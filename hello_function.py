@@ -1,7 +1,8 @@
-print("hello world")
-print("hello i am back ")
+
 def hello_fun(name):
-    print(f"hello, there {name}\n"
-          "how are you ")
+    '''A function that print hello + name of the person'''
+    x = input("Enter your name: ")
+    print("\n")
+    print(f"Hello {name}..")
     
-hello_fun("shamir")c
+hello_fun("shamir")
